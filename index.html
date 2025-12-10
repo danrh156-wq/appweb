@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 class="main-header__logo">ClimaApp</h1>
+        <form class="search-form">
+            <input type="text" class="search-form__input" placeholder="Buscar ciudad...">
+            <button class="search-form__button search-form__button--primary">Buscar</button>
+        </form>
+    </header>
+
+    <main class="container">
+        <section class="current-weather card">
+            <h2 class="current-weather__city">Ciudad</h2>
+            <div class="current-weather__details">
+                <img src="assets/icons/01d.png" alt="Icono del clima" class="current-weather__icon">
+                <div class="current-weather__temps">
+                    <p class="current-weather__temp">--°C</p>
+                    <p class="current-weather__temp-minmax">Min: --°C | Max: --°C</p>
+                </div>
+            </div>
+            <p class="current-weather__desc">Descripción</p>
+        </section>
+
+        <section class="forecast grid-container">
+            <!-- Pronóstico dinámico -->
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <p>&copy; 2025 ClimaApp by Carlos Ruiz. Datos de OpenWeatherMap.</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

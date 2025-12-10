@@ -1,0 +1,160 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #ecf0f1;
+    --font-color: #34495e;
+    --border-radius-md: 12px;
+    --spacing-md: 16px;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.search-form__input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+    min-width: 180px;
+}
+
+.search-form__button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    cursor: pointer;
+}
+
+.search-form__button--primary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Main */
+.container {
+    padding: var(--spacing-md);
+}
+
+/* Card clima actual */
+.card {
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.current-weather:hover {
+    transform: scale(1.02);
+}
+
+.current-weather__details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.current-weather__icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current-weather__temps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.current-weather__temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.current-weather__temp-minmax {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Pronóstico */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.forecast-card {
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-card img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media(max-width: 480px) {
+    .search-form {
+        flex-direction: column;
+    }
+    .search-form__input, .search-form__button {
+        border-radius: var(--border-radius-md);
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .current-weather__details {
+        flex-direction: column;
+    }
+}
